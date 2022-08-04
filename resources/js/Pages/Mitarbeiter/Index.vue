@@ -58,11 +58,7 @@
                     <Link href="/" class="m-auto shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"> Home </Link>
                 </div>
         </div>
-            <div v-else class="flex h-screen">
-                <div class="m-auto shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
-                    <Link href="/"> Home </Link>
-                </div>
-            </div>
+        <a v-else> {{ greet() }}</a>
     </body>
 </template>
 
@@ -70,5 +66,11 @@
     import { Link } from '@inertiajs/inertia-vue3'
     export default {
         components: { Link, },
+        methods: {
+            greet: function () {
+                window.location.href = "/"
+            }
+        }
     }
+    
 </script>

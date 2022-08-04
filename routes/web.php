@@ -23,6 +23,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::post('/', function(){
+    redirect('/');
+});
+
 //not used
 Route::get('/Mitarbeiter/Index', function (Request $request) {
     return Inertia::render('Mitarbeiter/Index',[
